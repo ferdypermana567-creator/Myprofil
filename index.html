@@ -1,0 +1,586 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio Ferdy Permana</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 20px;
+    background:rgba(15,23,42,.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:13px;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    padding:110px 25px 50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    radial-gradient(circle at top,#1e40af,#0f172a 60%);
+}
+
+.hero-content{
+    width:100%;
+    max-width:500px;
+}
+
+.profile{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #38bdf8;
+    margin-bottom:25px;
+    box-shadow:0 0 30px rgba(56,189,248,.4);
+}
+
+/* Kalau belum punya foto */
+.profile-placeholder{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:#1e293b;
+    border:5px solid #38bdf8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 25px;
+    font-size:55px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero h2{
+    font-size:19px;
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:13px 25px;
+    background:#38bdf8;
+    color:#0f172a;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* SECTION */
+section{
+    padding:70px 20px;
+}
+
+.title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:35px;
+}
+
+.title span{
+    color:#38bdf8;
+}
+
+/* ABOUT */
+.about{
+    background:#111827;
+}
+
+.about p{
+    max-width:550px;
+    margin:auto;
+    color:#cbd5e1;
+    line-height:1.8;
+    text-align:center;
+}
+
+/* SKILL */
+.skills{
+    display:grid;
+    gap:18px;
+    max-width:550px;
+    margin:auto;
+}
+
+.skill{
+    background:#1e293b;
+    padding:18px;
+    border-radius:12px;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.bar{
+    height:8px;
+    background:#334155;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    background:#38bdf8;
+}
+
+/* PROJECT */
+.projects{
+    background:#111827;
+}
+
+.project{
+    background:#1e293b;
+    padding:22px;
+    margin-bottom:18px;
+    border-radius:15px;
+    border-left:4px solid #38bdf8;
+}
+
+.project h3{
+    margin-bottom:10px;
+}
+
+.project p{
+    color:#cbd5e1;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* EXPERIENCE */
+.experience{
+    background:#0f172a;
+}
+
+.exp{
+    max-width:550px;
+    margin:auto;
+    background:#1e293b;
+    padding:22px;
+    border-radius:15px;
+}
+
+.exp h3{
+    color:#38bdf8;
+    margin-bottom:5px;
+}
+
+.exp small{
+    color:#94a3b8;
+}
+
+.exp p{
+    margin-top:15px;
+    color:#cbd5e1;
+    line-height:1.6;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:500px;
+    margin:auto;
+}
+
+.contact a{
+    display:block;
+    background:#1e293b;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    margin:12px 0;
+    border-radius:10px;
+}
+
+.contact a:hover{
+    background:#2563eb;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#94a3b8;
+    font-size:13px;
+}
+
+/* ANIMATION */
+.hero-content{
+    animation:fade .9s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Ferdy<span>.</span></div>
+
+    <a href="#contact">Contact</a>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+    <!--
+    GANTI FOTO:
+    Hapus profile-placeholder dan gunakan:
+
+    <img src="foto.jpg" class="profile">
+
+    -->
+    <img src="foto.jpg.png" class="profile">
+
+    <h1>Ferdy <span>Permana</span></h1>
+
+    <h2>Industrial Engineering Student</h2>
+
+    <p>
+        Saya tertarik pada dunia industri, produksi,
+        analisis data, teknologi, dan pengembangan
+        sistem kerja yang efektif dan efisien.
+    </p>
+
+    <a href="#about" class="btn">
+        Lihat Portfolio
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <h2 class="title">
+        Tentang <span>Saya</span>
+    </h2>
+
+    <p>
+        Saya memiliki ketertarikan pada bidang Industrial Engineering,
+        khususnya proses produksi, pengendalian persediaan,
+        analisis waste, produktivitas, dan pengolahan data.
+        Saya juga tertarik mempelajari teknologi dan pembuatan website.
+    </p>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section class="education">
+
+    <h2 class="title">
+        <span>Education</span>
+    </h2>
+
+    <div class="exp">
+
+        <h3>S1 Teknik Industri</h3>
+
+        <small>
+            Universitas Muhammadiyah Cileungsi
+        </small>
+
+        <p>
+            Menempuh pendidikan Sarjana Teknik Industri dengan
+            mempelajari berbagai bidang seperti sistem produksi,
+            manajemen persediaan, analisis data, pengendalian kualitas,
+            ergonomi, serta peningkatan efisiensi dan produktivitas.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILL -->
+<section id="skills">
+
+    <h2 class="title">
+        My <span>Skills</span>
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <div class="skill-top">
+                <b>Microsoft Excel</b>
+                <span>85%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width:85%"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-top">
+                <b>Analisis Data</b>
+                <span>80%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width:80%"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-top">
+                <b>Industrial Engineering</b>
+                <span>85%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width:85%"></div>
+            </div>
+        </div>
+
+
+        <div class="skill">
+            <div class="skill-top">
+                <b>HTML & CSS</b>
+                <span>70%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width:70%"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT -->
+<section class="projects" id="projects">
+
+    <h2 class="title">
+        My <span>Projects</span>
+    </h2>
+
+
+    <div class="project">
+
+        <h3>📊 Analisis Waste Produksi</h3>
+
+        <p>
+            Analisis pemborosan material produksi dengan
+            menggunakan perhitungan persentase waste dan
+            monitoring data secara mingguan.
+        </p>
+
+    </div>
+
+
+    <div class="project">
+
+        <h3>📦 Manajemen Persediaan</h3>
+
+        <p>
+            Analisis pengendalian persediaan menggunakan
+            metode ABC Analysis dan EOQ untuk membantu
+            menentukan jumlah persediaan yang optimal.
+        </p>
+
+    </div>
+
+
+    <div class="project">
+
+        <h3>💻 Website Portfolio</h3>
+
+        <p>
+            Membuat website portfolio pribadi menggunakan
+            HTML dan CSS dengan desain responsif untuk
+            perangkat smartphone.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="experience">
+
+    <h2 class="title">
+        <span>Experience</span>
+    </h2>
+
+    <div class="exp">
+
+        <h3>Production / Packing</h3>
+
+        <small>
+            PT Indofood CBP Sukses Makmur
+        </small>
+
+        <p>
+            Memiliki pengalaman di lingkungan produksi,
+            khususnya aktivitas packing dan supply material.
+            Terlibat dalam pengawasan penggunaan material,
+            pencatatan produksi, dan pengendalian pemborosan.
+        </p>
+
+    </div>
+
+</section>
+
+    <div class="exp" style="margin-top:20px;">
+
+        <h3>Internship / Industrial Engineering</h3>
+
+        <small>
+            PT Prasadha Pamunah Limbah Industri (PPLI)
+        </small>
+
+        <p>
+            Melaksanakan kegiatan magang pada Departemen Operasional
+            dengan fokus pada proses pengelolaan limbah industri,
+            khususnya proses stabilisasi dan solidifikasi sebelum
+            menuju landfill.
+        </p>
+
+        <p>
+            Menganalisis efisiensi penggunaan dump truck dalam
+            proses pengangkutan material dari area stabilisasi
+            menuju landfill, meliputi waktu loading, hauling,
+            dumping, delay, kapasitas angkut, dan jarak tempuh.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2 class="title">
+        Hubungi <span>Saya</span>
+    </h2>
+
+    <div class="contact-box">
+
+        <a href="https://wa.me/628xxxxxxxxxx">
+            📱 WhatsApp
+        </a>
+
+        <a href="mailto:emailkamu@gmail.com">
+            ✉️ Email
+        </a>
+
+        <a href="https://instagram.com/username">
+            📸 Instagram
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    © 2026 Ferdy Permana
+
+</footer>
+
+</body>
+</html>
+```
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html>
